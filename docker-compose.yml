@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+
+  webserver:
+    image: nginx
+    volumes:
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./public:/var/www/public
+    ports:
+    - "80:80"
+    depends_on:
+      - php
+
+  php:
+    build:
+      context: ./docker/php
+    volumes:
+      - ./public:/var/www/public
+      - ./docker/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+    environment:
+      - PHP_IDE_CONFIG=serverName=mytestservername
