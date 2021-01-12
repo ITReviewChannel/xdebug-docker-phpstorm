@@ -16,3 +16,5 @@
 [https://xdebug.org/docs/all_settings][Все настройки]
 
 [Все настройки]: https://xdebug.org/docs/all_settings
+
+[Рецепт на сайте]: https://itreviewchannel.ru/nastrojka-xdebug-3-docker-phpstorm
